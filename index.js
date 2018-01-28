@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
 
-const Person = require('./models/person')
+const Person = require('./Models/person')
 
 app.use(bodyParser.json())
 app.use(cors())
