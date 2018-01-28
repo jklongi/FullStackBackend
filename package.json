@@ -1,0 +1,30 @@
+{
+  "name": "fullstackbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jklongi/FullStackBackend.git"
+  },
+  "author": "Joonas Longi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jklongi/FullStackBackend/issues"
+  },
+  "homepage": "https://github.com/jklongi/FullStackBackend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
