@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(express.static('build'))
 
-morgan.token('json', function (request, response) { return JSON.stringify(request.body) })
+morgan.token('json', function (request) { return JSON.stringify(request.body) })
 app.use(morgan(':method :url :json :status :res[content-length] - :response-time ms'))
 
 
@@ -47,7 +47,7 @@ app.get('/api/persons', (request, response) => {
 app.post('/api/persons', (request, response) => {
 
   if (request.body === undefined) {
-    return response.status(400).json({error: 'content missing'})
+    return response.status(400).json({ error: 'content missing' })
   }
 
   const person = new Person({
@@ -82,9 +82,10 @@ app.get('/api/persons/:id', (request, response) => {
 
 app.delete('/api/persons/:id', (request, response) => {
   Person.findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
-    }).catch(error => {
+    })
+    .catch(() => {
       response.status(400).send({ error: 'malformatted id' })
     })
 })

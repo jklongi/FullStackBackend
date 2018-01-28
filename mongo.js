@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const url = 'mongodb://fullstack:Aurinkopaistaa@ds117178.mlab.com:17178/jlongi'
 
 mongoose.connect(url)
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise
 
 const Person = mongoose.model('Person', {
   name: String,
@@ -16,7 +16,7 @@ if(process.argv[2] && process.argv[3]){
     number: process.argv[3],
   })
 
-  person.save().then(response => {
+  person.save().then(() => {
     console.log(`Lisätäähn henkilö ${person.name} numero ${person.number} luetteloon`)
     mongoose.connection.close()
   })
